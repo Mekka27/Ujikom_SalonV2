@@ -16,6 +16,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
+        'no_telepon',
     ];
 
     protected $hidden = [
@@ -26,4 +28,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // Tambahkan ini di bawah method casts
+    public function reservasis()
+    {
+        return $this->hasMany(Reservasi::class);
+    }
+
 }
