@@ -4,7 +4,6 @@ export default function Index() {
   return (
     <div className="bg-[#c69c6d] text-white">
       <section className="relative min-h-screen overflow-hidden">
-        {/* Background garis-garis */}
         <div className="absolute inset-0 z-0">
           <svg className="w-full h-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
             {[...Array(10)].map((_, i) => (

@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 const Index = lazy(() => import('./pages'));
 const User = lazy(() => import('./pages/User/Index'));
 const DetailLy = lazy(() => import('./pages/User/DetailLy'));
+const Booking = lazy(() => import('./pages/User/Booking'));
 const SignUp = lazy(() => import('./pages/SignUp'));
 const SignIn = lazy(() => import('./pages/SignIn'));
 
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/" element={<Index />} />
           <Route path="/User" element={<User />} />
           <Route path="/User/DetailLy" element={<DetailLy />} />
+          <Route path="/User/Booking" element={<Booking />} />
           <Route path="/SignIn" element={<SignIn />} />
           <Route path="/SignUp" element={<SignUp />} />
         </Routes>
