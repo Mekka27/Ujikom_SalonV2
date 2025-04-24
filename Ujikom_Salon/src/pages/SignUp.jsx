@@ -66,10 +66,6 @@ export default function SignUp() {
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="text-sm text-gray-600">Nama Lengkap</label>
-                <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Nama Lengkap" className="w-full border rounded px-4 py-2 mt-1" required />
-              </div>
-              <div>
                 <label className="text-sm text-gray-600">Username</label>
                 <input type="text" name="username" value={formData.username} onChange={handleChange} placeholder="Username" className="w-full border rounded px-4 py-2 mt-1" required />
               </div>
@@ -112,17 +108,8 @@ export default function SignUp() {
             </a>
           </p>
 
-          <div className="flex items-center my-4">
-            <hr className="flex-grow border-gray-300" />
-            <span className="px-3 text-sm text-gray-400">Or Sign up with</span>
-            <hr className="flex-grow border-gray-300" />
-          </div>
-
-          <div className="flex justify-center gap-4 mt-4">
-            <button className="border p-3 rounded-md hover:bg-gray-100 text-blue-600"><FaFacebookF size={20} /></button>
-            <button className="border p-3 rounded-md hover:bg-gray-100 text-red-500"><FaGoogle size={20} /></button>
-            <button className="border p-3 rounded-md hover:bg-gray-100 text-black"><FaApple size={20} /></button>
-          </div>
+        
+         
         </div>
       </div>
     </div>

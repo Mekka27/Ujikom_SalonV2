@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { FaGoogle } from 'react-icons/fa';
 
 export default function SignIn() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -15,12 +17,26 @@ export default function SignIn() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/api/login', formData); // Ganti sesuai URL login di backend-mu
+      const response = await axios.post('http://localhost:8000/api/login', formData);
       console.log("Login berhasil:", response.data);
-      // Simpan token & redirect jika perlu
+
+      const { user, permissions, token } = response.data;
+
+      // Simpan token ke localStorage
+      localStorage.setItem("token", token.access_token);
+      localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("permissions", JSON.stringify(permissions));
+
+      // Redirect berdasarkan permissions
+      if (permissions["create-user"] && permissions["delete-user"]) {
+        navigate("/user");
+      } else {
+        navigate("/admin");
+      }
+
     } catch (error) {
-      console.error("Login gagal:", error.response?.data);
-      // Bisa tampilkan pesan error ke user
+      console.error("Login gagal:", error.response?.data || error.message);
+      alert("Login gagal. Silakan periksa kembali email dan password.");
     }
   };
 
@@ -80,14 +96,6 @@ export default function SignIn() {
             className="bg-[#C89B6D] text-white w-full py-2 rounded-md font-semibold"
           >
             Sign in
-          </button>
-
-          <button
-            type="button"
-            className="flex items-center justify-center w-full border py-2 rounded-md bg-black text-white"
-          >
-            <FaGoogle className="w-5 h-5 mr-2" size={20} />
-            Or sign in with Google
           </button>
 
           <p className="text-sm text-center">
