@@ -65,6 +65,24 @@ export default function Index() {
         </div>
       </section>
 
+      <section id="tentang" className="bg-white text-black py-20 px-6">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
+          <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+            <h1 className="text-4xl font-bold mb-4">Tentang Salon Kami</h1>
+            <p className="text-gray-700">
+            Salon kami menyediakan berbagai layanan kecantikan dan perawatan rambut dengan suasana nyaman dan pelayanan profesional. Mulai dari potong rambut, styling, creambath, hingga perawatan wajah – semua tersedia untuk membuat Anda tampil percaya diri setiap hari.
+            </p>
+          </div>
+          <div className="md:w-1/2">
+            <img
+              src="/TsA.png"
+              alt="Salon"
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Halaman Kedua - ServiceList */}
       <section id="layanan" className="bg-white text-black py-20 px-6">
         <div className="max-w-6xl mx-auto">

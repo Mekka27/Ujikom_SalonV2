@@ -3,8 +3,8 @@ import React from "react";
 export default function Index() {
   return (
     <div className="bg-[#c69c6d] text-white">
-      <section className="relative min-h-screen overflow-hidden">
-        {/* Background garis-garis */}
+      {/* Halaman Pertama */}
+      <section id="beranda" className="relative min-h-screen overflow-hidden">
         <div className="absolute inset-0 z-0">
           <svg className="w-full h-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
             {[...Array(10)].map((_, i) => (
@@ -20,7 +20,6 @@ export default function Index() {
         </div>
 
         <div className="relative z-10">
-         
           <main className="flex flex-col lg:flex-row items-center justify-center px-8 lg:px-24 py-20">
             <div className="text-center lg:text-left max-w-xl">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Selamat Datang</h2>
@@ -45,7 +44,7 @@ export default function Index() {
       </section>
 
       {/* Halaman Kedua */}
-      <section className="bg-white text-black py-20 px-6">
+      <section id="tentang" className="bg-white text-black py-20 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
             <h1 className="text-4xl font-bold mb-4">Tentang Salon Kami</h1>
