@@ -1,4 +1,10 @@
-
+/* Mengimpor dasar dari Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Menangani overflow horizontal pada elemen root */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}

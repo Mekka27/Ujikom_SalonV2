@@ -29,13 +29,13 @@ const Navbar = () => {
     >
       <h1 className="text-xl font-pacifico text-white">Verra Beauty</h1>
       <nav className="hidden md:flex items-center gap-6 text-sm text-white">
-        <a href="#beranda" className="hover:underline hover:text-white transition">
+        <a href="/user" className="hover:underline hover:text-white transition">
           Beranda
         </a>
         <a href="#tentang" className="hover:underline hover:text-white transition">
           Layanan
         </a>
-        <a href="#" className="hover:underline hover:text-white transition">
+        <a href="/user/booking" className="hover:underline hover:text-white transition">
           Reservasi
         </a>
         {!isLoggedIn && (

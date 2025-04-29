@@ -95,7 +95,7 @@ export default function SignIn() {
             type="submit"
             className="bg-[#C89B6D] text-white w-full py-2 rounded-md font-semibold"
           >
-            Sign in
+            Login
           </button>
 
           <p className="text-sm text-center">

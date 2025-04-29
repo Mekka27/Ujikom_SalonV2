@@ -1,14 +1,20 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from "react";
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
+import Navbar from './components/NavbarAdmin';
 
 
-// import withAuthenticationAdmin from './service/withAuthenticationAdmin'; 
 
 // Lazy load halaman-halaman
 import Footer from "./components/Footer"; 
 const Index = lazy(() => import('./pages'));
+const Admin = lazy(() => import('./pages/Admin/Index'));
+const AllSv = lazy(() => import('./pages/Admin/AllSv'));
+const AllUser = lazy(() => import('./pages/Admin/AllUser'));
+const AllCategory = lazy(() => import('./pages/Admin/AllCategory'));
+const AllBookingS = lazy(() => import('./pages/Admin/AllBookingS'));
+const AllPayment = lazy(() => import('./pages/Admin/AllPayment'));
 const User = lazy(() => import('./pages/User/Index'));
 const DetailLy = lazy(() => import('./pages/User/DetailLy'));
 const Booking = lazy(() => import('./pages/User/Booking'));
@@ -23,13 +29,19 @@ const App = () => {
       <Navbar /> 
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/Admin" element={<Admin />} />
+          <Route path="/Admin/AllSv" element={<AllSv />} />
+          <Route path="/Admin/AllUser" element={<AllUser />} />
+          <Route path="/Admin/AllCategory" element={<AllCategory />} />
+          <Route path="/Admin/AllBookingS" element={<AllBookingS />} />
+          <Route path="/Admin/AllPayment" element={<AllPayment />} />
           <Route path="/User" element={<User />} />
           <Route path="/User/DetailLy" element={<DetailLy />} />
           <Route path="/User/Booking" element={<Booking />} />
           <Route path="/SignIn" element={<SignIn />} />
           <Route path="/SignUp" element={<SignUp />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
 
       </Suspense>
     </Router>
